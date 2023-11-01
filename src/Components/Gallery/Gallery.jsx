@@ -18,31 +18,31 @@ const Gallery = () => {
 
            
             <div className="row">
-                <div className="col-4">
-                    <img className='img-fluid rounded-2' src={image11} alt="" />
+                <div className="col-lg-4 col-md-8">
+                    <img className='img-fluid rounded-2 card' src={image11} alt="" />
                 </div>
 
-                <div className="col-2">
-                    <div className='border border-2 rounded-2'><img className='img-fluid' src={image1} alt="" /></div>
-                    <div className='border border-2 rounded-2 mt-4'><img className='img-fluid' src={image2} alt="" /></div>
+                <div className="col-lg-2 col-md-4">
+                    <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image1} alt="" /></div>
+                    <div className='border border-2 rounded-2 card mt-4'><img className='img-fluid' src={image2} alt="" /></div>
                 </div>
-                <div className="col-2">
-                    <div className='border border-2 rounded-2'><img className='img-fluid' src={image3} alt="" /></div>
-                    <div className='border border-2 rounded-2 mt-4'><img className='img-fluid' src={image4} alt="" /></div>
+                <div className="col-lg-2 col-md-4">
+                    <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image3} alt="" /></div>
+                    <div className='border border-2 rounded-2 card mt-4'><img className='img-fluid' src={image4} alt="" /></div>
                 </div>
-                <div className="col-2">
-                    <div className='border border-2 rounded-2'><img className='img-fluid' src={image5} alt="" /></div>
-                    <div className='border border-2 rounded-2 mt-4'><img className='img-fluid' src={image6} alt="" /></div>
+                <div className="col-lg-2 col-md-4">
+                    <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image5} alt="" /></div>
+                    <div className='border border-2 rounded-2 card mt-4'><img className='img-fluid' src={image6} alt="" /></div>
                 </div>
             </div>
 
             <div className="row mt-4">
-                <div className="col-2"> <div className='border border-2 rounded-2'><img className='img-fluid' src={image7} alt="" /></div> </div>
-                <div className="col-2"> <div className='border border-2 rounded-2'><img className='img-fluid' src={image8} alt="" /></div> </div>
-                <div className="col-2"> <div className='border border-2 rounded-2'><img className='img-fluid' src={image9} alt="" /></div> </div>
-                <div className="col-2"> <div className='border border-2 rounded-2'><img className='img-fluid' src={image10} alt="" /></div> </div>
+                <div className="col-lg-2 col-md-4"> <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image7} alt="" /></div> </div>
+                <div className="col-lg-2 col-md-4"> <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image8} alt="" /></div> </div>
+                <div className="col-lg-2 col-md-4"> <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image9} alt="" /></div> </div>
+                <div className="col-lg-2 col-md-4"> <div className='border border-2 rounded-2 card'><img className='img-fluid' src={image10} alt="" /></div> </div>
 
-                <div className="col-2"> <div className='border border-2 rounded-2 add-image'> 
+                <div className="col-lg-2 col-md-4"> <div className='border border-2 rounded-2 add-image card'> 
                 <i className="bi bi-card-image"></i>
                 <p> Add Images </p> </div> </div>
             </div>

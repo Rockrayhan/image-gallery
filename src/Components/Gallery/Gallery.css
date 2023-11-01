@@ -17,3 +17,13 @@ body {
     justify-content: center;
     align-items: center;
 } */
+
+
+.card {
+    transition: transform 0.90s;
+}
+
+.card:hover {
+    transform: translate(0, -10px);
+    box-shadow: 5px 10px 10px 10px rgba(128, 128, 128, 0.425);
+}
