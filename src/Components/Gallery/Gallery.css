@@ -21,6 +21,11 @@ body {
 
 .card {
     transition: transform 0.90s;
+    cursor: grab;
+}
+
+.card:active {
+    cursor: grabbing;
 }
 
 .card:hover {
