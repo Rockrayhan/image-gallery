@@ -32,3 +32,10 @@ body {
     transform: translate(0, -10px);
     box-shadow: 5px 10px 10px 10px rgba(128, 128, 128, 0.425);
 }
+
+
+
+input {
+    height: 30px;
+    width: 30px;
+}
