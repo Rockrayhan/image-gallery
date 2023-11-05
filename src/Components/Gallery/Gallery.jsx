@@ -36,13 +36,14 @@ const Gallery = () => {
 
       {/* ===== conditional rendering for delete btn === */}
       {selectedImages.length > 0 ? (
-        <div className='border border-2 rounded-2 mt-5 mb-5 p-3'>
+        <div className='border border-2 rounded-2 mt-5 mb-5 p-2'>
           <button className='btn btn-danger' onClick={handleDeleteImages}>Delete Selected Images</button>
         </div>
-      ) : <div className='border border-2 rounded-2 mt-5 mb-5 p-3'> <h2> Gallery </h2>  </div>}
+      ) : <div className='border border-2 rounded-2 mt-5 mb-5 p-2'> <h3> Gallery </h3>  </div>}
 
 
-      {/*  Drag N Drop  */}
+      {/* ========  Drag N Drop =========== */}
+
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="image-gallery" direction="horizontal">
           {(provided) => (
