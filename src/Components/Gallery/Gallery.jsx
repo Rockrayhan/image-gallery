@@ -9,21 +9,20 @@ const Gallery = () => {
   const fileInputRef = useRef(null);
 
   const onDragEnd = (result) => {
-    if (!result.destination) {
-      return;
-    }
-    const reorderedImages = [...images];
+    if (!result.destination) return;
+
+    const reorderedImages = Array.from(images);
     const [movedImage] = reorderedImages.splice(result.source.index, 1);
     reorderedImages.splice(result.destination.index, 0, movedImage);
     setImages(reorderedImages);
   };
 
   const handleImageSelection = (imageId) => {
-    if (selectedImages.includes(imageId)) {
-      setSelectedImages(selectedImages.filter((id) => id !== imageId));
-    } else {
-      setSelectedImages([...selectedImages, imageId]);
-    }
+    setSelectedImages((prevSelected) => {
+      return prevSelected.includes(imageId)
+        ? prevSelected.filter((id) => id !== imageId)
+        : [...prevSelected, imageId];
+    });
   };
 
   const handleDeleteImages = () => {
@@ -34,8 +33,10 @@ const Gallery = () => {
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
+
     if (file) {
       const reader = new FileReader();
+
       reader.onload = (event) => {
         const imageUrl = event.target.result;
         const newImage = {
@@ -43,10 +44,13 @@ const Gallery = () => {
           id: Math.random().toString(36).substr(2, 9),
           img: imageUrl,
         };
-        setImages([...images, newImage]);
+
+        setImages((prevImages) => [...prevImages, newImage]);
       };
+
       reader.readAsDataURL(file);
     }
+
     if (fileInputRef.current) {
       fileInputRef.current.value = null;
     }
@@ -54,17 +58,15 @@ const Gallery = () => {
 
   return (
     <div className='container'>
-      {selectedImages.length > 0 ? (
-        <div className='border border-2 rounded-2 mb-1 p-3'>
+      <div className='border border-2 rounded-2 mb-1 p-3'>
+        {selectedImages.length > 0 ? (
           <button className='btn btn-danger' onClick={handleDeleteImages}>
             Delete Selected Images
           </button>
-        </div>
-      ) : (
-        <div className='border border-2 rounded-2 mb-1 p-3'>
+        ) : (
           <h2>Gallery</h2>
-        </div>
-      )}
+        )}
+      </div>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId='image-gallery' direction='horizontal'>
           {(provided) => (
@@ -84,7 +86,12 @@ const Gallery = () => {
                           checked={selectedImages.includes(item.id)}
                           onChange={() => handleImageSelection(item.id)}
                         />
-                        <img className='img-fluid' src={item.img} alt={item.name} style={{ width: '200px', height: '200px' }} />
+                        <img
+                          className='img-fluid'
+                          src={item.img}
+                          alt={item.name}
+                          style={{ width: '200px', height: '200px' }}
+                        />
                       </div>
                     </div>
                   )}
