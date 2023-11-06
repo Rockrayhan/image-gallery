@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './Gallery.css';
-import fakeData from './fakedata.json';
+import fakeData from '../../../public/fakedata.json';
 
 const Gallery = () => {
   const [images, setImages] = useState(fakeData);
